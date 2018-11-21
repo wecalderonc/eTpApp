@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :problemsolutions
+  has_many :projects, through: :problemsolutions
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
